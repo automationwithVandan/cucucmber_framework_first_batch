@@ -1,0 +1,23 @@
+1- Download and install jenkins
+2- New Item>select free style project>
+3- Advanced Tab> Use custom workspace and give url of the folder where your pom.xml exists
+D:\Selenium codes\interview_practice\cucumber
+
+4- In Build Steps> type clean test and save.
+
+5- Add runner file into TestNG.xml class
+6- Include testng.xml file into your pom.xml maven 
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M4</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>${project.basedir}/testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
